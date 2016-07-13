@@ -11,11 +11,11 @@
 ##   Connect to the container at DOCKER_IP:3000
 ##     replacing DOCKER_IP for the IP of your active docker host
 
-FROM gcr.io/stacksmith-images/ubuntu-buildpack:14.04-r8
+FROM gcr.io/stacksmith-images/debian-buildpack:wheezy-r07
 
 MAINTAINER Bitnami <containers@bitnami.com>
 
-ENV STACKSMITH_STACK_ID="fwhzqnv" \
+ENV STACKSMITH_STACK_ID="anu9i41" \
     STACKSMITH_STACK_NAME="rrikhy/node-todo" \
     STACKSMITH_STACK_PRIVATE="1"
 
