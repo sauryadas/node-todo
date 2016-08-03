@@ -15,22 +15,21 @@ FROM gcr.io/stacksmith-images/ubuntu-buildpack:14.04-r8
 
 MAINTAINER Bitnami <containers@bitnami.com>
 
-ENV STACKSMITH_STACK_ID="asg72w0" \
+ENV STACKSMITH_STACK_ID="avkuzwr" \
     STACKSMITH_STACK_NAME="sauryadas/node-todo" \
     STACKSMITH_STACK_PRIVATE="1"
 
-RUN bitnami-pkg install node-6.3.1-0 --checksum afc84696d6aeaf8a3d058ecda07f72bfa54392207fa939e6b11ef8eba986aff9
+RUN bitnami-pkg install node-4.4.7-0 --checksum 2bc2f9e92412b0b3bc620e9f8c227fb2d85f980e068adbd626564b13990926d7
 
 ENV PATH=/opt/bitnami/node/bin:/opt/bitnami/python/bin:$PATH \
     NODE_PATH=/opt/bitnami/node/lib/node_modules
 
 ## STACKSMITH-END: Modifications below this line will be unchanged when regenerating
 
-# ExpressJS template
+# Node base template
 COPY . /app
 WORKDIR /app
 
 RUN npm install
 
-EXPOSE 3000
-CMD ["npm", "start"]
+CMD ["node"]
